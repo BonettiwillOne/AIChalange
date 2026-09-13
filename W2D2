@@ -1,0 +1,27 @@
+using System.Text;
+using W2D1;
+
+Console.InputEncoding = Encoding.UTF8;
+Console.OutputEncoding = Encoding.UTF8;
+using var agent = new LlmAgent();
+Console.WriteLine(agent.HistoryStatus);
+using var cancellation = new CancellationTokenSource();
+Console.CancelKeyPress += (_, args) =>
+{
+    args.Cancel = true;
+    cancellation.Cancel();
+};
+Console.WriteLine("Введите запрос на русском языке. Новый диалог: /reset. Выход: /выход, /exit или Ctrl+C.");
+while (!cancellation.IsCancellationRequested)
+{
+    Console.Write("Вы: ");
+    var request = Console.ReadLine();
+    if (request is null || request.Trim().Equals("/exit", StringComparison.OrdinalIgnoreCase)
+                        || request.Trim().Equals("/выход", StringComparison.OrdinalIgnoreCase)
+                        || cancellation.IsCancellationRequested)
+        break;
+    if (string.IsNullOrWhiteSpace(request))
+        continue;
+    Console.WriteLine($"Агент: {await agent.AskAsync(request, cancellation.Token)}");
+    Console.WriteLine();
+}
