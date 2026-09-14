@@ -13,6 +13,7 @@ Console.WriteLine("Сжатие истории: /compression on или /compress
 Console.WriteLine(agent.HistoryStatus);
 Console.WriteLine(agent.StrategyStatus);
 Console.WriteLine("Стратегии: /strategy sliding|facts|branching. Память: /facts.");
+Console.WriteLine("Окно Sliding: /sliding N (включая новый запрос); /sliding — текущий размер.");
 Console.WriteLine("Ветки: /checkpoint имя; /branch ветка [checkpoint]; /switch ветка; /branches.");
 using var cancellation = new CancellationTokenSource();
 Console.CancelKeyPress += (_, args) =>
