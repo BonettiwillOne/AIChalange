@@ -1,0 +1,24 @@
+{
+  "messages": [],
+  "usage": {
+    "totalTokens": 44950,
+    "costUsd": 0.0274648,
+    "isPartial": false
+  },
+  "summary": "",
+  "archive": [],
+  "compressionEnabled": true,
+  "context": {
+    "mode": "branching",
+    "slidingWindowMessages": 10,
+    "activeBranch": "premium",
+    "selectedCheckpoint": null,
+    "branches": {
+      "premium": {
+        "messages": [],
+        "facts": {}
+      }
+    },
+    "checkpoints": {}
+  }
+}
