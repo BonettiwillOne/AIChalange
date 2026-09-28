@@ -1,0 +1,23 @@
+{
+  "activeProfile": "Елена",
+  "profiles": {
+    "default": {
+      "name": "Игорь",
+      "expertise": "beginner",
+      "response_style": "simple",
+      "response_length": "concise",
+      "format": "step-by-step",
+      "language": "Russian",
+      "constraints": "объясняй технические термины простыми словами"
+    },
+    "Елена": {
+      "name": null,
+      "expertise": "expert",
+      "response_style": "technical",
+      "response_length": "detailed",
+      "format": "structured",
+      "language": null,
+      "constraints": "используй профессиональную терминологию без объяснения базовых понятий"
+    }
+  }
+}
